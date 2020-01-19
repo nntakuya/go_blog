@@ -16,7 +16,7 @@ services:
     environment:
       MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: password
+      MYSQL_DATABASE: matsun_dev
     # docker-compse run実行時に実行される
     # オプションは日本語文の文字化け対策
     command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci --skip-character-set-client-handshake

@@ -23,11 +23,9 @@ services:
     # パスをボリュームとしてマウント
     # :の左側がホストディレクトリ、:の右側がコンテナ上のディレクトリ
     volumes:
-      - "db-data:/var/lib/mysql"
+      - "./docker/mysql/db-data:/var/lib/mysql"
       # 初期設定を読み込む
-      - "./docker/mysql/init/:docker-entry-point-initdb.d"
-      # MySQL起動時にDBを作成する
-      - "./docker/mysql/init/:/docker-entrypoint-initdb.d"
+      - "./docker/mysql/init/:/docker-entry-point-initdb.d"
   app: #service名
     links:
       - mysql
